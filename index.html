@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Sk Jahid Ali — Digital Operations, Web Engineering, IoT & AI Automation" />
+  <title>Sk Jahid Ali | Digital Engineer & Creative Technologist</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dark-theme">
+  <!-- Interactive Cursor Follower -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Ambient Light Mesh Background -->
+  <div class="ambient-mesh">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand-logo">
+        <span class="logo-accent">JAHID</span>.DEV
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-item">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#skills" class="nav-item">Tech Stack</a>
+        <a href="#experience" class="nav-item">Journey</a>
+        <a href="#contact" class="nav-item nav-btn-connect">Let's Talk</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-container">
+      <div class="hero-status-pill reveal">
+        <span class="status-indicator"></span>
+        <span>Available for High-Impact Engineering Roles</span>
+      </div>
+
+      <h1 class="hero-heading reveal">
+        Engineering <span class="gradient-text">Interactive Web</span> & <br />
+        Autonomous <span class="gradient-text-alt">AI Operations</span>.
+      </h1>
+
+      <p class="hero-sub reveal">
+        Hey, I'm <strong>Sk Jahid Ali</strong> — Head of Digital Operations at NI Group, Kolkata. 
+        I bridge the gap between low-level hardware thinking, modern frontend systems, 
+        and high-converting search architectures (SEO / AEO / GEO).
+      </p>
+
+      <div class="hero-action-row reveal">
+        <a href="#projects" class="btn btn-primary magnetic">
+          <span>Explore Work</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l10-10M7 7h10v10"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-glass magnetic">
+          <span>Get in Touch</span>
+        </a>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="stats-strip reveal">
+        <div class="stat-card">
+          <span class="stat-num" data-count="3">0</span><span class="stat-suffix">+</span>
+          <span class="stat-title">Commercial Web Releases</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="95">0</span><span class="stat-suffix">%</span>
+          <span class="stat-title">Academic Tech Merit</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="100">0</span><span class="stat-suffix">%</span>
+          <span class="stat-title">AI Workflow Integration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kinetic Marquee Banner -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>AI PROMPT ENGINEERING • FULL-STACK FRONTEND • IOT & ESP32 • SEO / AEO / GEO • METRICS-DRIVEN PERFORMANCE • </span>
+      <span>AI PROMPT ENGINEERING • FULL-STACK FRONTEND • IOT & ESP32 • SEO / AEO / GEO • METRICS-DRIVEN PERFORMANCE • </span>
+    </div>
+  </div>
+
+  <!-- Bento Grid About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-badge">PROFILE INSIGHTS</div>
+      <h2 class="section-title">The Hybrid Edge: Hardware Meets Modern Web</h2>
+      
+      <div class="bento-grid">
+        <!-- Bio Card -->
+        <div class="bento-card bento-span-2 tilt-card">
+          <div class="card-glow"></div>
+          <div class="bento-content">
+            <span class="card-tag">Core Philosophy</span>
+            <h3>Systems-Thinking Over Pure Syntax</h3>
+            <p>
+              Holding a B.Tech in Electrical Engineering from Aliah University gave me a deep understanding 
+              of signal control, circuits, and logic pipelines. I apply this exact rigor to web architecture: 
+              optimizing critical rendering paths, automating workflows via AI agent prompts, and scaling user acquisition.
+            </p>
+            <div class="card-meta-chips">
+              <span class="chip">📍 Kolkata, WB</span>
+              <span class="chip">⚡ B.Tech EE (CGPA 7.06)</span>
+              <span class="chip">🏆 95% 10+2 Engg Stream</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leadership Card -->
+        <div class="bento-card tilt-card">
+          <div class="card-glow"></div>
+          <div class="bento-content">
+            <span class="card-tag">Leadership & Sports</span>
+            <h3>Discipline Under Pressure</h3>
+            <ul class="clean-bullet-list">
+              <li><strong>Team Captain</strong> — Aliah University Kabaddi (AIU East Zone)</li>
+              <li><strong>Registered Player</strong> — Amateur Kabaddi Federation of India (WB ID: 146728029029)</li>
+              <li><strong>Student Coordinator</strong> — Institution's Innovation Council (IIC)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Hardware & Grid Training Card -->
+        <div class="bento-card tilt-card">
+          <div class="card-glow"></div>
+          <div class="bento-content">
+            <span class="card-tag">Industrial Foundation</span>
+            <h3>Grid & High-Voltage Systems</h3>
+            <p class="card-desc-compact">
+              Underwent professional training at <strong>CESC Limited</strong> (LT & HV Underground Distribution) 
+              and <strong>WBSETCL</strong> (Substation management & grid switchboards).
+            </p>
+          </div>
+        </div>
+
+        <!-- IoT Innovation Spotlight Card -->
+        <div class="bento-card bento-span-2 tilt-card highlight-card">
+          <div class="card-glow"></div>
+          <div class="bento-content">
+            <span class="card-tag">R&D Capstone Highlight</span>
+            <h3>Smart IoT Energy Meter via ESP32 Microcontroller</h3>
+            <p>
+              Engineered a real-time smart metering unit combining current/voltage sensors, 
+              Wi-Fi telemetry, automated bill-generation models, and an interactive cloud dashboard with instant alert triggers.
+            </p>
+            <div class="pill-group">
+              <span class="tech-pill">ESP32</span>
+              <span class="tech-pill">C++ / Arduino</span>
+              <span class="tech-pill">IoT Web Dashboard</span>
+              <span class="tech-pill">Telemetry</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="section section-projects" id="projects">
+    <div class="container">
+      <div class="section-badge">DEPLOYED SYSTEMS</div>
+      <h2 class="section-title">Production Web Architecture</h2>
+      <p class="section-sub">High-traffic web platforms optimized for organic reach and conversion.</p>
+
+      <div class="projects-showcase">
+        <!-- Project 1 -->
+        <article class="modern-project-card tilt-card">
+          <div class="card-glow"></div>
+          <div class="project-header">
+            <span class="project-category">Enterprise Real Estate Platform</span>
+            <span class="live-status">LIVE SYSTEM</span>
+          </div>
+          <h3>NI Group Realty</h3>
+          <p class="project-desc">
+            Full-stack corporate platform featuring automated property inquiry pipelines, 
+            AI-powered buyer chat interfaces, portfolio showcases (Invicta, Iris, Iqra), and unified WhatsApp routing.
+          </p>
+          <div class="tech-tag-row">
+            <span>AEO / GEO</span>
+            <span>JavaScript ES6+</span>
+            <span>AI Bot Pipeline</span>
+            <span>Lead Automation</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://www.nigrouprealty.com/" target="_blank" rel="noopener" class="link-btn">
+              <span>Inspect Production</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l10-10M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="modern-project-card tilt-card">
+          <div class="card-glow"></div>
+          <div class="project-header">
+            <span class="project-category">Industrial & Infrastructure</span>
+            <span class="live-status">LIVE SYSTEM</span>
+          </div>
+          <h3>BEPL Kolkata</h3>
+          <p class="project-desc">
+            B2B portal engineered for Bewandert Engineers (P) Ltd. Implemented modern HSE compliance archives, 
+            interactive engineering capabilities directory, and integrated BEPL AI Hub tools.
+          </p>
+          <div class="tech-tag-row">
+            <span>Modular UI</span>
+            <span>SEO Architecture</span>
+            <span>Feasibility Tools</span>
+            <span>Responsive Web</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://www.beplkol.com/" target="_blank" rel="noopener" class="link-btn">
+              <span>Inspect Production</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l10-10M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="modern-project-card tilt-card">
+          <div class="card-glow"></div>
+          <div class="project-header">
+            <span class="project-category">Global Trade & Digital Growth</span>
+            <span class="live-status">LIVE SYSTEM</span>
+          </div>
+          <h3>RIZQ ONE</h3>
+          <p class="project-desc">
+            Multi-tier consulting and trade hub designed with dual funnel pathways for domestic corporate growth 
+            and global trade / study-abroad counseling with validated compliance schemas.
+          </p>
+          <div class="tech-tag-row">
+            <span>Funnel Architecture</span>
+            <span>High Performance</span>
+            <span>Security Protocols</span>
+            <span>CSS Grid</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://www.rizqone.com/" target="_blank" rel="noopener" class="link-btn">
+              <span>Inspect Production</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l10-10M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Skills Radar / Matrix -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-badge">CAPABILITIES MATRIX</div>
+      <h2 class="section-title">The Engineering Arsenal</h2>
+      
+      <div class="skills-matrix">
+        <div class="skill-category-box tilt-card">
+          <div class="card-glow"></div>
+          <h3><span class="category-icon">⚡</span> Front-End & Core Dev</h3>
+          <p class="category-meta">Clean semantic architecture, responsive layouts & hardware simulation.</p>
+          <div class="skill-tokens">
+            <span class="token">HTML5 / Semantic UI</span>
+            <span class="token">CSS3 Modern / Bento / Grid</span>
+            <span class="token">JavaScript (ES6+)</span>
+            <span class="token">Matlab / Simulink</span>
+            <span class="token">DOM Event Systems</span>
+          </div>
+        </div>
+
+        <div class="skill-category-box tilt-card">
+          <div class="card-glow"></div>
+          <h3><span class="category-icon">🤖</span> AI & Search Engineering</h3>
+          <p class="category-meta">Next-gen discovery algorithms and generative automation workflows.</p>
+          <div class="skill-tokens">
+            <span class="token">Prompt Engineering</span>
+            <span class="token">AEO (Answer Engine Opt.)</span>
+            <span class="token">GEO (Generative Engine Opt.)</span>
+            <span class="token">Technical SEO</span>
+            <span class="token">Workflow Automation</span>
+          </div>
+        </div>
+
+        <div class="skill-category-box tilt-card">
+          <div class="card-glow"></div>
+          <h3><span class="category-icon">🛠️</span> Tooling & Infrastructure</h3>
+          <p class="category-meta">Deployment pipelines, source control, and CRM integration.</p>
+          <div class="skill-tokens">
+            <span class="token">Git & GitHub</span>
+            <span class="token">VS Code DevTools</span>
+            <span class="token">NeoDove CRM</span>
+            <span class="token">Google Search Console</span>
+            <span class="token">SEMrush Audits</span>
+          </div>
+        </div>
+
+        <div class="skill-category-box tilt-card">
+          <div class="card-glow"></div>
+          <h3><span class="category-icon">🌐</span> Growth & Media Operations</h3>
+          <p class="category-meta">Data attribution, omnichannel conversions and ad delivery.</p>
+          <div class="skill-tokens">
+            <span class="token">Meta Ads Manager</span>
+            <span class="token">Google Ads Network</span>
+            <span class="token">Lead Generation Funnels</span>
+            <span class="token">Multilingual Comm (En/Hi/Bn)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Timeline -->
+  <section class="section section-timeline" id="experience">
+    <div class="container">
+      <div class="section-badge">CAREER PROGRESSION</div>
+      <h2 class="section-title">Experience & Milestones</h2>
+
+      <div class="motion-timeline">
+        <!-- Milestone 1 -->
+        <div class="timeline-row reveal">
+          <div class="timeline-period">
+            <span class="badge-active">Present</span>
+            <span class="time-text">Jan 2026 – Now</span>
+          </div>
+          <div class="timeline-card">
+            <h3>Head of Digital Operations <span class="org">@ NI Group</span></h3>
+            <p class="role-location">Kolkata, India</p>
+            <ul class="role-duties">
+              <li>Architecting cross-platform digital initiatives and deploying AI automation flows across multi-tier teams.</li>
+              <li>Engineered search-optimized web applications with tailored AEO and GEO schemas to dominate generative query engines.</li>
+              <li>Overseeing end-to-end IT integration, CRM pipelines, and high-ROI Meta & Google acquisition campaigns.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="timeline-row reveal">
+          <div class="timeline-period">
+            <span class="time-text">Dec 2024 – Jan 2026</span>
+          </div>
+          <div class="timeline-card">
+            <h3>Digital Marketing Manager <span class="org">@ GeoAlgo Technologies</span></h3>
+            <p class="role-location">Kolkata, India</p>
+            <ul class="role-duties">
+              <li>Spearheaded multi-channel campaigns while building production-grade frontend interfaces in HTML5/CSS3/JavaScript.</li>
+              <li>Formulated systematic SEO and AEO ranking playbooks, improving regional online market share.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="timeline-row reveal">
+          <div class="timeline-period">
+            <span class="time-text">Jul 2024 – Dec 2024</span>
+          </div>
+          <div class="timeline-card">
+            <h3>Search Engine Optimization Specialist <span class="org">@ Webvio Technologies</span></h3>
+            <p class="role-location">Kolkata, India</p>
+            <ul class="role-duties">
+              <li>Audited technical crawl issues, performed deep competitor backlink analysis using SEMrush and Keyword Planner.</li>
+              <li>Collaborated with senior engineering squads to enhance site speed and core web vitals.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect / Contact -->
+  <section class="section section-contact" id="contact">
+    <div class="container contact-box tilt-card">
+      <div class="card-glow"></div>
+      <div class="contact-header">
+        <span class="section-badge">INITIATE CONTACT</span>
+        <h2>Looking for an engineer who moves fast & thinks systems?</h2>
+        <p>I am actively preparing for MNC technical roles and collaborative high-scale projects.</p>
+      </div>
+
+      <div class="contact-links-grid">
+        <a href="mailto:skjahid466@gmail.com" class="direct-link-card">
+          <span class="icon">✉</span>
+          <div class="details">
+            <label>Direct Email</label>
+            <span>skjahid466@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="tel:+916296376653" class="direct-link-card">
+          <span class="icon">📞</span>
+          <div class="details">
+            <label>Call / WhatsApp</label>
+            <span>+91 62963 76653</span>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/skjahidali" target="_blank" rel="noopener" class="direct-link-card">
+          <span class="icon">🔗</span>
+          <div class="details">
+            <label>LinkedIn Network</label>
+            <span>linkedin.com/in/skjahidaligit</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimalist Clean Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Sk Jahid Ali. Crafted with pure CSS & modern Vanilla JS.</p>
+      <div class="footer-badge">
+        <span class="dot-online"></span> All systems operational
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
