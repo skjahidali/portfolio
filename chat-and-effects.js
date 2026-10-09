@@ -1,24 +1,119 @@
-(function(){
-var KB="Sk Jahid Ali, Kolkata, India. Head of Digital Operation at NI Group (Jan 2026 to now): AI prompt-engineering automation, responsive websites with SEO/AEO/GEO, IT support, CRM, Meta Ads, Google Ads, lead generation. Before: Digital Marketing Manager at GeoAlgo Technologies (Dec 2024-Jan 2026), SEO at Webvio Technologies (Jul-Dec 2024), digital intern at Martian Corporation. B.Tech Electrical Engineering, Aliah University (CGPA 7.06). Training at CESC and WBSETCL. Project: smart energy meter on ESP32 with IoT dashboard. Websites built: nigrouprealty.com, beplkol.com, rizqone.com. Skills: HTML, CSS, JS, MATLAB, GitHub, VS Code, NeoDove CRM, HRMS, generative AI, SEO, AEO, GEO, SMO, ads. Languages: Bengali, English, Hindi. Student coordinator of the Institution's Innovation Council; Aliah University Kabaddi team captain at AIU competitions. Open to freelance: websites, SEO/AEO/GEO, ads and lead generation, AI automation and chatbots. Contact: skjahid466@gmail.com, +91 62963 76653. Social: WhatsApp +91 62963 76653, GitHub, Instagram @banglatonic, LinkedIn and Facebook as Sk Jahid Ali. Also started a dating app project.";
-var P=document.getElementById('cbp'),M=document.getElementById('ms'),I=document.getElementById('ci'),hist=[],busy=false,sm=null,tried=false;
-function add(c,x){var d=document.createElement('div');d.className='m '+c;d.textContent=x;M.appendChild(d);M.scrollTop=M.scrollHeight;return d}
-function fb(q){q=q.toLowerCase();
-if(/hire|freelanc|price|cost|project|work with/.test(q))return"Jahid takes freelance projects: websites, SEO/AEO/GEO, ads and lead generation, and AI automation. Email skjahid466@gmail.com or call +91 62963 76653.";
-if(/site|web|portfolio/.test(q))return"He built nigrouprealty.com, beplkol.com and rizqone.com using HTML, CSS and JavaScript with SEO, AEO and GEO optimization.";
-if(/seo|aeo|geo|ads|market/.test(q))return"He ran multi-channel campaigns at GeoAlgo and now handles Meta Ads, Google Ads and lead generation at NI Group, with SEO, AEO and GEO strategy.";
-if(/ai|automat|prompt/.test(q))return"He automates workflows with AI prompt engineering and CRM tooling, and builds chatbots and lead pipelines.";
-if(/educat|study|degree|univers|engineer/.test(q))return"B.Tech in Electrical Engineering at Aliah University, Kolkata, CGPA 7.06, with training at CESC and WBSETCL.";
-return"Jahid is Head of Digital Operation at NI Group in Kolkata, working on web development, SEO, ads and AI automation. Ask about his projects, skills or freelance work, or email skjahid466@gmail.com.";}
-async function send(q){if(!q||busy)return;busy=true;I.value='';document.getElementById('sg').style.display='none';add('u',q);hist.push({r:'Visitor',c:q});var b=add('b','...');
-try{if(!tried){tried=true;try{var s=await claude.use('sample');sm=s}catch(e){sm=null}}
-if(!sm)throw 0;
-var p="You are the assistant on Sk Jahid Ali's portfolio site. Answer visitors in 1 to 3 short sentences, using only these facts. If something is not covered, say you don't know and suggest emailing him. Never invent clients, prices or results.\nFACTS: "+KB+"\nCONVERSATION:\n"+hist.slice(-8).map(function(h){return h.r+': '+h.c}).join('\n')+"\nAssistant:";
-var r=await sm(p,{cache:false,modelTier:'quick',onText:function(o){b.textContent=o.text;M.scrollTop=M.scrollHeight}});
-b.textContent=r.text||fb(q)}catch(e){b.textContent=fb(q)}
-hist.push({r:'Assistant',c:b.textContent});busy=false}
-document.getElementById('cbb').onclick=function(){P.classList.toggle('o');if(!M.children.length){add('b',"Hi, I'm Jahid's AI assistant. What would you like to know?");['What does he build?','Can I hire him?','Which sites has he made?'].forEach(function(x){var k=document.createElement('button');k.textContent=x;k.onclick=function(){send(x)};document.getElementById('sg').appendChild(k)})}};
-document.getElementById('cs').onclick=function(){send(I.value.trim())};I.onkeydown=function(e){if(e.key==='Enter')send(I.value.trim())};
-var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{threshold:.15});
-document.querySelectorAll('.card,.svc,.q,.lab,.tl div').forEach(function(el){el.classList.add('rv');o.observe(el)});
-document.querySelectorAll('.card,.svc,.q').forEach(function(el){el.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=el.getBoundingClientRect();el.style.transform='perspective(800px) rotateY('+((e.clientX-r.left)/r.width-.5)*8+'deg) rotateX('+(-((e.clientY-r.top)/r.height-.5))*8+'deg)'});el.addEventListener('pointerleave',function(){el.style.transform=''})});
+(function () {
+  var panel = document.getElementById('cbp');
+  var messages = document.getElementById('ms');
+  var input = document.getElementById('ci');
+  var form = document.getElementById('chat-form');
+  var toggle = document.getElementById('cbb');
+  var suggestions = document.getElementById('sg');
+  var close = document.getElementById('chat-close');
+  var busy = false;
+
+  function addMessage(type, text) {
+    var message = document.createElement('p');
+    message.className = 'chat-message chat-message-' + type;
+    message.textContent = text;
+    messages.appendChild(message);
+    messages.scrollTop = messages.scrollHeight;
+    return message;
+  }
+
+  function answer(question) {
+    var q = question.toLowerCase();
+    if (/\b(hire|freelanc|price|cost|budget|project|work with)\b/.test(q)) {
+      return 'Jahid is open to freelance projects in website development, SEO/AEO/GEO, ads and lead generation, and AI automation. Email skjahid466@gmail.com or call +91 62963 76653 to discuss your project.';
+    }
+    if (/\b(site|website|web|portfolio|built|build)\b/.test(q)) {
+      return 'Jahid has worked on nigrouprealty.com, beplkol.com, and rizqone.com. His portfolio focuses on responsive websites built with HTML, CSS, and JavaScript.';
+    }
+    if (/\b(seo|aeo|geo|ads|marketing|lead)\b/.test(q)) {
+      return 'Jahid works across SEO, AEO, GEO, Meta Ads, Google Ads, and lead generation. He currently leads digital operations at NI Group.';
+    }
+    if (/\b(ai|automat|prompt|chatbot|crm)\b/.test(q)) {
+      return 'Jahid works with AI prompt engineering, CRM tools, workflow automation, and chatbot projects. He also builds lead-generation workflows.';
+    }
+    if (/\b(education|educat|study|degree|university|engineer)\b/.test(q)) {
+      return 'Jahid has a B.Tech in Electrical Engineering from Aliah University in Kolkata, and completed training at CESC and WBSETCL.';
+    }
+    if (/\b(speak|bengali|hindi|english)\b/.test(q)) {
+      return 'Jahid speaks Bengali, English, and Hindi.';
+    }
+    if (/\b(service|offer|provide)\b/.test(q)) {
+      return 'Jahid offers website development, SEO/AEO/GEO, paid advertising and lead generation, and AI automation. He is open to freelance projects.';
+    }
+    if (/\b(skill|technology|tech stack|tools|programming language)\b/.test(q)) {
+      return 'His skills include HTML, CSS, JavaScript, MATLAB, SEO, AEO, GEO, generative AI, NeoDove CRM, HRMS, Meta Ads, and Google Ads.';
+    }
+    if (/\b(contact|email|phone|call|reach)\b/.test(q)) {
+      return 'You can email skjahid466@gmail.com or call +91 62963 76653.';
+    }
+    if (/\b(who|about|role|job|work|experience)\b/.test(q)) {
+      return 'Sk Jahid Ali is a digital operations professional in Kolkata and Head of Digital Operation at NI Group. He works on web development, search strategy, paid campaigns, and AI automation.';
+    }
+    return 'I can help with questions about Jahid’s projects, services, skills, or contact details. For anything else, email him at skjahid466@gmail.com.';
+  }
+
+  function send(question) {
+    var q = question.trim();
+    if (!q || busy) return;
+
+    busy = true;
+    input.value = '';
+    suggestions.hidden = true;
+    addMessage('visitor', q);
+    var response = addMessage('assistant', 'One moment…');
+    window.setTimeout(function () {
+      response.textContent = answer(q);
+      busy = false;
+      if (!panel.hidden) input.focus();
+    }, 250);
+  }
+
+  function openChat() {
+    panel.hidden = false;
+    toggle.setAttribute('aria-expanded', 'true');
+    if (!messages.children.length) {
+      addMessage('assistant', 'Hi! I can answer questions about Jahid’s work, services, and experience.');
+      ['What websites has he built?', 'Can I hire him?', 'How can I contact him?'].forEach(function (question) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'chat-suggestion';
+        button.textContent = question;
+        button.addEventListener('click', function () { send(question); });
+        suggestions.appendChild(button);
+      });
+    }
+    input.focus();
+  }
+
+  function closeChat() {
+    panel.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.focus();
+  }
+
+  toggle.addEventListener('click', function () {
+    if (panel.hidden) openChat();
+    else closeChat();
+  });
+  close.addEventListener('click', closeChat);
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    send(input.value);
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && !panel.hidden) closeChat();
+  });
+
+  document.querySelectorAll('.project-card, .service-card').forEach(function (element) {
+    element.addEventListener('pointermove', function (event) {
+      if (event.pointerType !== 'mouse') return;
+      var rect = element.getBoundingClientRect();
+      var rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 6;
+      var rotateX = -((event.clientY - rect.top) / rect.height - 0.5) * 6;
+      element.style.transform = 'perspective(800px) rotateY(' + rotateY + 'deg) rotateX(' + rotateX + 'deg)';
+    });
+    element.addEventListener('pointerleave', function () {
+      element.style.transform = '';
+    });
+  });
 })();

@@ -64,21 +64,28 @@
 
         <div class="card-grid">
           <a class="project-card" href="https://www.nigrouprealty.com" target="_blank" rel="noopener">
-            <div class="site-badge">NI Group Realty</div>
+            <div class="site-badge site-badge--logo">
+              <img class="site-logo site-logo--ni" src="NI%20GROUP%20COLOR%20LOGO.png" alt="NI Group logo" />
+            </div>
             <h3>nigrouprealty.com</h3>
             <p>Real estate site with lead capture wired into CRM and ad campaigns.</p>
             <span class="tag">Visit site</span>
           </a>
 
           <a class="project-card" href="https://www.beplkol.com" target="_blank" rel="noopener">
-            <div class="site-badge">BEPL Kol</div>
+            <div class="site-badge site-badge--logo">
+              <img class="site-logo site-logo--bepl" src="bepl-logo.png" alt="BEPL Engineers logo" />
+            </div>
             <h3>beplkol.com</h3>
             <p>Business website built for local search visibility in Kolkata.</p>
             <span class="tag">Visit site</span>
           </a>
 
           <a class="project-card" href="https://www.rizqone.com" target="_blank" rel="noopener">
-            <div class="site-badge">RizqOne</div>
+            <div class="site-badge site-badge--logo site-badge--rizq">
+              <img class="site-logo--rizq" src="assets/rizqone-mark.svg" alt="" />
+              <span>RIZQ <strong>ONE</strong></span>
+            </div>
             <h3>rizqone.com</h3>
             <p>Brand site with a clean, fast, mobile-first build.</p>
             <span class="tag">Visit site</span>
@@ -169,11 +176,34 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <p>© 2026 Sk Jahid Ali</p>
-    </footer>
+      <aside class="chatbot" aria-label="Portfolio assistant">
+        <section class="chat-panel" id="cbp" aria-labelledby="chat-title" hidden>
+          <header class="chat-header">
+            <div>
+              <h2 id="chat-title">Jahid’s portfolio assistant</h2>
+              <p>Ask about projects, services, or getting in touch.</p>
+            </div>
+            <button class="chat-close" id="chat-close" type="button" aria-label="Close chat">×</button>
+          </header>
+          <div class="chat-messages" id="ms" role="log" aria-live="polite" aria-relevant="additions"></div>
+          <div class="chat-suggestions" id="sg" aria-label="Suggested questions"></div>
+          <form class="chat-form" id="chat-form">
+            <label class="visually-hidden" for="ci">Your message</label>
+            <input id="ci" name="message" type="text" maxlength="500" placeholder="Type your question…" autocomplete="off" required />
+            <button id="cs" type="submit" aria-label="Send message">Send</button>
+          </form>
+        </section>
+        <button class="chat-toggle" id="cbb" type="button" aria-controls="cbp" aria-expanded="false">
+          <span aria-hidden="true">✦</span> Ask me
+        </button>
+      </aside>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="three-scene.js"></script>
+      <footer class="footer">
+        <p>© 2026 Sk Jahid Ali</p>
+      </footer>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      <script src="three-scene.js"></script>
+      <script src="chat-and-effects.js" defer></script>
   </body>
 </html>
